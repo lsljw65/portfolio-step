@@ -118,6 +118,16 @@ header{
 .nav-list a{
     color:black;
     font-weight: 900;
+    /* 수정 */
+    /* background-color:red; */
+    width:100px;
+    text-align:center;
+    padding:5px 0;
+    border-radius:5px;
+}
+/* 추가 보완 */
+.nav-list a.clickActive{
+    background-color:skyblue;
 }
 
 @media screen and (min-width:450px){

@@ -54,6 +54,27 @@ $(document).ready(function(){
         $navBool=true;
         }
     })
+
+    // 스크롤 애니메이션
+    $(window).scroll(function(){
+        $scrollTop=$(window).scrollTop();
+        if($scrollTop<70){
+            $("header").removeClass("topHeader")
+        }else{
+            $("header").addClass("topHeader")
+        }
+    })
+    // 해시 애니메이션
+    $(".nav-list a").click(function(){
+        $hash=$(this.hash).offset().top
+        $("html,body").stop().animate({
+            scrollTop:$hash
+        })
+        $(".nav-list a").removeClass("clickActive")
+        $(this).addClass("clickActive")
+        $(".nav-list").removeClass("nav-position")
+        $navBool=true;
+    })
     
     /* *************************************************************************** */
     // 활성/비활성
@@ -81,7 +102,12 @@ $(document).ready(function(){
                         
                         // 휠을 올렸을 때 애니메이션 할 위치
                         // ///////////////////////////////////////////////////////////////////
-                       
+                        if(moveTop<70 ){
+                            console.log("70보다 작습니다.")
+                            $("header").removeClass("topHeader")                            
+                        }
+                        $(".nav-list a").eq(index).removeClass("clickActive")
+                        $(".nav-list a").eq(index-1).addClass("clickActive")
                         // /////////////////////////////////////////////////////////////////
                     }
                     
@@ -93,7 +119,11 @@ $(document).ready(function(){
                         console.log("섹션의 위치 : "+moveTop)
                         // 휠을 내렸을 때 애니메이션 할 위치
                         // ///////////////////////////////////////////////////////
-                        
+                        if(moveTop>100){
+                            $("header").addClass("topHeader")
+                        }
+                        $(".nav-list a").eq(index).removeClass("clickActive")
+                        $(".nav-list a").eq(index+1).addClass("clickActive")
                         // //////////////////////////////////////////////////////
                         
                     }
