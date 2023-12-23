@@ -11,9 +11,10 @@
         <title>Portfolio</title>
         <script src="./js/jquery-3.6.0.min.js"></script>
         <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.2/dist/circle-progress.js"></script>
-        <script src="./js/common.js"></script>
+        <script src="./js/common-select.js"></script>
+        <script src="./js/menuselect.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/common-select.css">
 
     </head>
     <body>
@@ -26,23 +27,26 @@
                     <div class="header-wrap">
                         <h1>PORTFOLIO</h1>
                         <nav class="nav-wrap">
-                            <button class="navBt">Work view</button>
-                            <div class="nav-list">
-                                <a href="#about">About</a>
-                                <a href="#web">Website</a>
-                                <a href="#banner">Banner</a>
-                                <a href="#detail">Detail</a>
-                                <a href="#icon">Icon</a>
-                                <a href="#skill">Skill</a>
-                                <a href="#ep">Epilogue</a>
-                            </div>
-                            
+                            <div class="selectBox2 ">
+                                <button class="label">Works View</button>
+                                <ul class="optionList">
+                                  <li class="optionItem"><a href="#about">About</a></li>
+                                  <li class="optionItem"><a href="#web">Website</a></li>
+                                  <li class="optionItem"><a href="#banner">Banner</a></li>
+                                  <li class="optionItem"><a href="#detail">Detail</a></li>
+                                  <li class="optionItem"><a href="#icon">Icom</a></li>
+                                  <li class="optionItem"><a href="#skill">Skill</a></li>
+                                  <li class="optionItem"><a href="#ep">Epilogue</a></li>
+                                </ul>
+                            </div>  
                         </nav>
                     </div>
+                    
                 </header>
                 <div class="first-box">
                     <h2>소개 섹션</h2>
                 </div>
+                
             </section>
             <section class="section" id="web">
                 <h2>Website</h2>
