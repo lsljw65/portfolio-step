@@ -42,7 +42,18 @@ $(document).ready(function(){
     
     /* *************************************************************************** */
     // 헤더 네비, 사이드 네비 구성 처리 및 
-    
+    var $navBool=true;
+    $(".navBt").click(function(){
+        if($navBool){
+        $(this).addClass("bt-background")
+        $(".nav-list").addClass("nav-position")
+        $navBool=false;
+        }else{
+        $(".nav-list").removeClass("nav-position")
+        $(this).removeClass("bt-background")
+        $navBool=true;
+        }
+    })
     
     /* *************************************************************************** */
     // 활성/비활성
