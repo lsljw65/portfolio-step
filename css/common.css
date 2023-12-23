@@ -77,6 +77,9 @@ header{
     display:flex;
     justify-content: center;
     align-items: center;
+    /* 수정 */
+    flex-direction: column;
+    padding-top:15%;
 }
 
 /* 네비 */
@@ -130,6 +133,81 @@ header{
     background-color:skyblue;
 }
 
+.about-group1{
+    width:25%;
+    min-width:300px;
+    height:30%;
+    min-height:200px;
+    /* border:1px solid black; */
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+.about-group1 h2{
+    position:relative;
+    padding:5px;
+    margin-right:auto;
+}
+.about-group1 h2:after{
+    content:"";
+    position:absolute;
+    width:14rem;
+    height:2px;
+    background-color:#712626;
+    bottom:0;
+    left:0;
+}
+.photo{
+    width:70%;
+    height:70%;
+    /* border:1px solid black; */
+    box-shadow:5px 5px 2px #e0dede
+}
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.about-group2{
+    width:80%;
+    height:300px;
+    /* border:1px solid black; */
+    margin-top:20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.about-group2 ul{
+    list-style:none;
+}
+.about-group2 ul li{
+    line-height:200%;
+}
+.about-group2 ul li strong{
+    display:inline-block;
+    width:30%;
+    text-align:justify;
+    line-height: 0;
+    padding-right:10px;
+}
+.about-group2 ul li strong:after{
+    content:"";
+    display:inline-block;
+    width:100%;
+}
+.about-group2 ul li strong:before{
+    content:"";
+    display:inline-block;
+    width:100%;
+}
+.about{
+    width:100%;
+    line-height:200%;
+    margin-top:20px;
+    font-weight: 700;
+    text-align: justify;
+}
 @media screen and (min-width:450px){
     
 }
@@ -139,7 +217,16 @@ header{
 
 }
 @media screen and (min-width:768px){
-    
+    .first-box{
+        max-width:768px;
+        flex-direction: row;
+        padding:0;
+    }
+    .about-group1{
+        align-items:flex-start;
+        justify-content: space-around;
+        min-height:250px;
+    }
 }
 @media screen and (min-width:1024px){
     section:first-child{
