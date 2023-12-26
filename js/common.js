@@ -56,14 +56,24 @@ $(document).ready(function(){
     })
 
     // 스크롤 애니메이션
-    $(window).scroll(function(){
-        $scrollTop=$(window).scrollTop();
-        if($scrollTop<70){
-            $("header").removeClass("topHeader")
-        }else{
-            $("header").addClass("topHeader")
-        }
+    $(".section").each(function(index){
+        $(window).scroll(function(){
+            $scrollTop=$(window).scrollTop();
+            if($scrollTop<70){
+                $("header").removeClass("topHeader")
+            }else{
+                $("header").addClass("topHeader")
+            }
+            if(windowWidth<768){
+                if($scrollTop+$(window).height()/2>=$('.section').eq(index).offset().top){
+                    $(".side-nav a").removeClass("side-active")
+                    $(".side-nav a").eq(index).addClass("side-active")
+                }
+            }
+            
+        })
     })
+    
     // 해시 애니메이션
     $(".nav-list a").each(function(index){
         $(this).click(function(){
@@ -105,7 +115,7 @@ $(document).ready(function(){
     //휠 함수
       function wheel(){
         // 슬라이드 부분 삽입
-
+        var $section1=$("section").eq(1).offset().top;
         //-------------휠을 올렸을 때의 동작 -----------------------------------------------
         $(".section").each(function(index){
             
@@ -119,7 +129,7 @@ $(document).ready(function(){
                         
                         // 휠을 올렸을 때 애니메이션 할 위치
                         // ///////////////////////////////////////////////////////////////////
-                        if(moveTop<70 ){
+                        if(moveTop<$section1 ){
                             console.log("70보다 작습니다.")
                             $("header").removeClass("topHeader")                            
                         }
@@ -138,7 +148,7 @@ $(document).ready(function(){
                         console.log("섹션의 위치 : "+moveTop)
                         // 휠을 내렸을 때 애니메이션 할 위치
                         // ///////////////////////////////////////////////////////
-                        if(moveTop>100){
+                        if(moveTop>$section1){
                             $("header").addClass("topHeader")
                         }
                         $(".nav-list a").eq(index).removeClass("clickActive")
