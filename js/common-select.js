@@ -65,6 +65,8 @@ $(document).ready(function(){
         }
     })
     // 해시 애니메이션
+    $(".optionItem").removeClass("clickActive")
+    $(".optionItem").eq(0).addClass("clickActive")
     $(".optionList a").click(function(){
         $hash=$(this.hash).offset().top
         $("html,body").stop().animate({
@@ -86,7 +88,7 @@ $(document).ready(function(){
     //휠 함수
       function wheel(){
         // 슬라이드 부분 삽입
-
+        var $section1=$("section").eq(1).offset().top;
         //-------------휠을 올렸을 때의 동작 -----------------------------------------------
         $(".section").each(function(index){
             
@@ -100,12 +102,12 @@ $(document).ready(function(){
                         
                         // 휠을 올렸을 때 애니메이션 할 위치
                         // ///////////////////////////////////////////////////////////////////
-                        if(moveTop<70 ){
+                        if(moveTop<$section1 ){
                             console.log("70보다 작습니다.")
                             $("header").removeClass("topHeader")                            
                         }
-                        $(".nav-list a").eq(index).removeClass("clickActive")
-                        $(".nav-list a").eq(index-1).addClass("clickActive")
+                        $(".optionItem").eq(index).removeClass("clickActive")
+                        $(".optionItem").eq(index-1).addClass("clickActive")
                         // /////////////////////////////////////////////////////////////////
                     }
                     
@@ -117,11 +119,11 @@ $(document).ready(function(){
                         console.log("섹션의 위치 : "+moveTop)
                         // 휠을 내렸을 때 애니메이션 할 위치
                         // ///////////////////////////////////////////////////////
-                        if(moveTop>100){
+                        if(moveTop>$section1){
                             $("header").addClass("topHeader")
                         }
-                        $(".nav-list a").eq(index).removeClass("clickActive")
-                        $(".nav-list a").eq(index+1).addClass("clickActive")
+                        $(".optionItem").eq(index).removeClass("clickActive")
+                        $(".optionItem").eq(index+1).addClass("clickActive")
                         // //////////////////////////////////////////////////////
                         
                     }
