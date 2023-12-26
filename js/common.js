@@ -65,16 +65,33 @@ $(document).ready(function(){
         }
     })
     // 해시 애니메이션
-    $(".nav-list a").click(function(){
-        $hash=$(this.hash).offset().top
-        $("html,body").stop().animate({
-            scrollTop:$hash
+    $(".nav-list a").each(function(index){
+        $(this).click(function(){
+            $hash=$(this.hash).offset().top
+            $("html,body").stop().animate({
+                scrollTop:$hash
+            })
+            $(".nav-list a").removeClass("clickActive")
+            $(this).addClass("clickActive")
+            $(".nav-list").removeClass("nav-position")
+            $navBool=true;
+            $(".side-nav a").removeClass("side-active")
+            $(".side-nav a").eq(index).addClass("side-active")
         })
-        $(".nav-list a").removeClass("clickActive")
-        $(this).addClass("clickActive")
-        $(".nav-list").removeClass("nav-position")
-        $navBool=true;
     })
+    $(".side-nav a").each(function(index){
+        $(this).click(function(){
+            $hash=$(this.hash).offset().top
+            $("html,body").stop().animate({
+                scrollTop:$hash
+            })
+            $(".side-nav a").removeClass("side-active")
+            $(this).addClass("side-active");
+            $(".nav-list a").removeClass("clickActive");
+            $(".nav-list a").eq(index).addClass("clickActive")
+        })
+    })
+    
     
     /* *************************************************************************** */
     // 활성/비활성
@@ -108,6 +125,8 @@ $(document).ready(function(){
                         }
                         $(".nav-list a").eq(index).removeClass("clickActive")
                         $(".nav-list a").eq(index-1).addClass("clickActive")
+                        $(".side-nav a").eq(index).removeClass("side-active")
+                        $(".side-nav a").eq(index-1).addClass("side-active")
                         // /////////////////////////////////////////////////////////////////
                     }
                     
@@ -124,6 +143,8 @@ $(document).ready(function(){
                         }
                         $(".nav-list a").eq(index).removeClass("clickActive")
                         $(".nav-list a").eq(index+1).addClass("clickActive")
+                        $(".side-nav a").eq(index).removeClass("side-active")
+                        $(".side-nav a").eq(index+1).addClass("side-active")
                         // //////////////////////////////////////////////////////
                         
                     }
