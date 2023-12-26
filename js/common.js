@@ -68,6 +68,8 @@ $(document).ready(function(){
                 if($scrollTop+$(window).height()/2>=$('.section').eq(index).offset().top){
                     $(".side-nav a").removeClass("side-active")
                     $(".side-nav a").eq(index).addClass("side-active")
+                    $(".nav-list a").removeClass("clickActive");
+                    $(".nav-list a").eq(index).addClass("clickActive")
                 }
             }
             
