@@ -337,7 +337,7 @@ section:nth-child(2){
     transition:width 0.5s;
 }
 .side-nav a:nth-child(1):after{
-    content:"About"
+    content:""
 }
 .side-nav a:nth-child(2):after{
     content:"Website"
@@ -415,6 +415,9 @@ section:nth-child(2){
     }
     .side-nav a{
         height:30px;
+    }
+    .side-nav a:nth-child(1):after{
+        content:"About"
     }
 }
 @media screen and (min-width:1024px){
