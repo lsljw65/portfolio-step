@@ -89,6 +89,7 @@ $(document).ready(function(){
             $navBool=true;
             $(".side-nav a").removeClass("side-active")
             $(".side-nav a").eq(index).addClass("side-active")
+            $(".navBt").removeClass("bt-background");
         })
     })
     $(".side-nav a").each(function(index){
@@ -101,6 +102,9 @@ $(document).ready(function(){
             $(this).addClass("side-active");
             $(".nav-list a").removeClass("clickActive");
             $(".nav-list a").eq(index).addClass("clickActive")
+            $navBool=true;
+            $(".navBt").removeClass("bt-background");
+            $(".nav-list").removeClass("nav-position")
         })
     })
     
