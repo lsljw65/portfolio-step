@@ -2,7 +2,7 @@ $(document).ready(function(){
     /* *************************************************************************** */
       var winHeight=0; //브라우저의 높이 변수
       var windowWidth;
-      
+      var activeIndex=0;
     //  슬라이더 변수
 
     // 터치 변수 
@@ -33,9 +33,9 @@ $(document).ready(function(){
         $wh()
         wheel();
         // ////////////////////////////////////////////////////////////////////////
-        /* $("html,body").stop().animate({
+        $("html,body").stop().animate({
           scrollTop:winHeight*activeIndex
-         }); */
+         },0);
         // ///////////////////////////////////////////////////////////////////////// 
         
       })
@@ -116,7 +116,24 @@ $(document).ready(function(){
     // 스킬
 
     // 애니메이션
-    
+    function $animation(){
+        $(".about-group1").removeClass("aboutActive");
+        $(".about-group2").removeClass("aboutActive");
+        
+            $(".section").eq(activeIndex).find(".about-group1").addClass("aboutActive");
+            $(".section").eq(activeIndex).find(".about-group2").addClass("aboutActive");
+        
+        $(".web-group").removeClass("aniActive")
+        for(i=0; i<$(".web-group").length; i++){
+            $(".section").eq(activeIndex).find(".web-group").eq(i).addClass("aniActive")
+        }
+        $(".banner-box div a").removeClass("bannerActive");
+        for(i=0; i<$(".banner-box div a").length; i++){
+            $(".section").eq(activeIndex).find(".banner-box div a").eq(i).addClass("bannerActive")
+        }
+        
+    }
+    $animation();
     // //////////////////////////////////////////////////////////////////////
     //휠 함수
       function wheel(){
@@ -132,7 +149,7 @@ $(document).ready(function(){
                     if($(this).prev() != undefined){
                         var moveTop=$(this).prev().offset().top;
                         console.log("섹션의 위치 : "+moveTop)
-                        
+                        activeIndex=index-1;
                         // 휠을 올렸을 때 애니메이션 할 위치
                         // ///////////////////////////////////////////////////////////////////
                         if(moveTop<$section1 ){
@@ -150,7 +167,7 @@ $(document).ready(function(){
                     console.log("내렸어요");
                     if($(this).next() != undefined){
                         var moveTop=$(this).next().offset().top;
-                        
+                        activeIndex=index+1
                         console.log("섹션의 위치 : "+moveTop)
                         // 휠을 내렸을 때 애니메이션 할 위치
                         // ///////////////////////////////////////////////////////
@@ -166,7 +183,7 @@ $(document).ready(function(){
                     }
                 }
                 // //////////////////////////////////////////////////////////////
-                
+                $animation();
                 $("html,body").stop().animate({
                     scrollTop:moveTop
                 },800);
