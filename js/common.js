@@ -123,7 +123,43 @@ $(document).ready(function(){
     
     // //////////////////////////////////////////////////////////////////
     // 스킬
-
+    function $circle(){
+        $('.photoshop.circle').circleProgress({
+            value: 1
+          }).on('circle-animation-progress', function(event, progress) {
+            $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+          });
+        
+          $('.ill.circle').circleProgress({
+            value: 1
+          }).on('circle-animation-progress', function(event, progress) {
+            $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+          });
+        
+          $('.figma.circle').circleProgress({
+            value: 1
+          }).on('circle-animation-progress', function(event, progress) {
+            $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+          });
+        
+          $('.html.circle').circleProgress({
+            value: 1
+          }).on('circle-animation-progress', function(event, progress) {
+            $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+          });
+        
+          $('.css.circle').circleProgress({
+            value: 1
+          }).on('circle-animation-progress', function(event, progress) {
+            $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+          });
+        
+          $('.javascript.circle').circleProgress({
+            value: 1
+          }).on('circle-animation-progress', function(event, progress) {
+            $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+          });
+    }
     // 애니메이션
     function $animation(){
         $(".about-group1").removeClass("aboutActive");
@@ -139,6 +175,10 @@ $(document).ready(function(){
         $(".banner-box div a").removeClass("bannerActive");
         for(i=0; i<$(".banner-box div a").length; i++){
             $(".section").eq(activeIndex).find(".banner-box div a").eq(i).addClass("bannerActive")
+        }
+        if(activeIndex+1==6){
+            console.log("activeIndex : "+activeIndex)
+            $circle();
         }
         
     }

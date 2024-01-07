@@ -467,6 +467,12 @@ section:nth-child(3){
 /* section:nth-child(4){
     height:100px !important;
 } */
+
+/* 스킬 섹션 */
+#skill{
+    flex-direction: column;
+    padding:100px 0;
+}
 @media screen and (min-width:450px){
     
 }
