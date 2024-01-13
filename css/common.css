@@ -472,6 +472,23 @@ section:nth-child(3){
 #skill{
     flex-direction: column;
     padding:100px 0;
+    justify-content: center;
+}
+
+/* 상세이미지 */
+#detail{
+    flex-direction:column;
+}
+.detail-slider{
+    width:80%;
+    max-width:1280px;
+}
+#icon{
+    flex-direction: column;
+}
+.icon-slider{
+    width:80%;
+    height:auto;
 }
 @media screen and (min-width:450px){
     

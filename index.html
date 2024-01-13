@@ -136,38 +136,148 @@
             </section>
             <section class="section" id="detail">
                 <h2>상세 이미지</h2>
+                <div class="detail-slider">
+                    <!-- Link Swiper's CSS -->
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+                    <link rel="stylesheet" href="./css/swiper.css">
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="./images/tp-s1.jpg">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="./images/tp-s2.jpg">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="./images/tp-s3.jpg">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="./images/tp-s4.jpg">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="./images/tp-s5.jpg">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="./images/tp-s6.jpg">
+                                </a>
+                            </div>
+                            
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                        <div class="autoplay-progress">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="20"></circle>
+                        </svg>
+                        <span></span>
+                        </div>
+                    </div>
+    
+                    <!-- Swiper JS -->
+                    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                    <script src="./js/swiper.js"></script>
+                </div>
+                
             </section>
+
             <section class="section" id="icon">
                 <h2>아이콘</h2>
+                <div class="icon-slider">
+                    <link rel="stylesheet" href="./css/slider.css">
+                    <script src="./js/slider.js"></script>
+                    <div class="slider-group">
+                        <div class="slider-wrap">
+                          <div class="slides">
+                            <div class="slide">
+                              <a href="http://www.naver.com">
+                                <img src="./images/desk-slide1.jpg" alt="설명" class="active">
+                              </a>  
+                            </div>
+                            <div class="slide">
+                              <a href="http://www.naver.com">
+                                <img src="./images/desk-slide2.jpg" alt="설명">
+                              </a>
+                            </div>
+                            <div class="slide">
+                              <a href="http://www.naver.com">
+                                <img src="./images/desk-slide3.jpg" alt="설명">
+                              </a>
+                            </div>
+                            <div class="slide">
+                              <a href="http://www.naver.com">
+                                <img src="./images/desk-slide4.jpg" alt="설명">
+                              </a>
+                            </div>
+                            
+                            
+                          </div>
+                          <button class="control prevbt">이전</button>
+                          <button class="control nextbt btactive">다음</button>
+                          <!-- dot 페이지네이션 -->
+                          <div class="pagenation">
+                            <!-- <span class="dot active"><img src="./images/desk-slide1.jpg" alt="설명"></span>
+                            <span class="dot"><img src="./images/desk-slide2.jpg" alt="설명"></span>
+                            <span class="dot"><img src="./images/desk-slide3.jpg" alt="설명"></span>
+                            <span class="dot"><img src="./images/desk-slide4.jpg" alt="설명"></span> -->
+                          </div>
+                        </div>
+                      </div>
+                </div>
             </section>
             <section class="section" id="skill">
                 <h2>스킬</h2>
                 <link rel="stylesheet" href="css/progress.css">
                 <div class="skill-container">
-                    <div class="photoshop circle">
-                        <strong></strong>
+                    <div class="skill-box">
+                        <div class="photoshop circle">
+                            <strong></strong>
+                        </div>
                         <span>Photoshop</span>
                     </div>
-                    <div class="ill circle">
-                        <strong></strong>
+                    <div class="skill-box">
+                        <div class="ill circle">
+                            <strong></strong>
+                        </div>
                         <span>Illustator</span>
                     </div>
-                    <div class="figma circle">
-                        <strong></strong>
+                    <div class="skill-box">
+                        <div class="figma circle">
+                            <strong></strong>  
+                        </div>
                         <span>Figma</span>
                     </div>
-                    <div class="html circle">
-                        <strong></strong>
+                    <div class="skill-box">
+                        <div class="html circle">
+                            <strong></strong> 
+                        </div>
                         <span>Html</span>
                     </div>
-                    <div class="css circle">
-                        <strong></strong>
+                    <div class="skill-box">
+                        <div class="css circle">
+                            <strong></strong>  
+                        </div>
                         <span>CSS</span>
                     </div>
-                    <div class="javascript circle">
-                        <strong></strong>
+                    <div class="skill-box">
+                        <div class="javascript circle">
+                            <strong></strong>
+                        </div>
                         <span>Javascript <br> jQuery</span>
                     </div>
+                    
                     
                 </div>
                 <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.2/dist/circle-progress.js"></script>

@@ -8,24 +8,31 @@
     align-content: center;
     justify-content: space-around;
 }
+.skill-box{
+  width:40%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:10px 0;
+}
 .circle {
-    width: 30%;
-    margin: 6px 6px 20px;
+    width: 100%;
+    margin: 6px;
     display: inline-block;
     position: relative;
     text-align: center;
-    line-height: 1.2;
   }
   
   .circle canvas {
     vertical-align: top;
-    width:70px;
-    height:70px;
+    width:70px !important;
+    height:70px !important;
   }
   
   .circle strong {
     position: absolute;
-    top: 35%;
+    top: 50%;
     left: 50%;
     width: 100%;
     text-align: center;
@@ -44,12 +51,12 @@
     display: block;
     color: #aaa;
     margin-top: 0;
-    font-size:0.9rem
+    font-size:0.9rem;
+    text-align:center
   }
 
   @media screen and (min-width:768px){
-    .circle strong {
-        top: 40%;
-
-      }
+    .skill-box{
+      width:30%;
+    }
   }

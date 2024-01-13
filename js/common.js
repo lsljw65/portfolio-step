@@ -176,7 +176,7 @@ $(document).ready(function(){
         for(i=0; i<$(".banner-box div a").length; i++){
             $(".section").eq(activeIndex).find(".banner-box div a").eq(i).addClass("bannerActive")
         }
-        if(activeIndex+1==6){
+        if(activeIndex+1>=6){
             console.log("activeIndex : "+activeIndex)
             $circle();
         }
